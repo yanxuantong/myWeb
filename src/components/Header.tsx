@@ -28,8 +28,15 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
 
         <p>
           Before that, at{' '}
-          <span className="text-neutral-900 font-semibold">Blinkfire</span>, I worked on SaaS advertising and media analytics, applying machine learning to understand whether ads are landing and what signals make them effective. I like systems that are simple on the surface, reliable under load, and still pleasant to maintain. Outside of work, I spend a lot of time exploring local-first AI tools, agentic development workflows, and small software products.{' '}
-          <span className="font-cat text-[1.08em] italic text-neutral-800">I also happen to be a cat person.</span>
+          <span className="text-neutral-900 font-semibold">Blinkfire</span>, I worked on SaaS advertising and media analytics, applying machine learning to understand whether ads are landing and what signals make them effective.
+        </p>
+
+        <p>
+          Outside of work, I spend a lot of time exploring local-first AI tools, agentic development workflows, and small software products.
+        </p>
+
+        <p className="font-cat text-[1.08em] italic text-neutral-800 leading-snug pt-0.5">
+          I also happen to be a cat person.
         </p>
 
         <p>
