@@ -32,7 +32,7 @@ export default function App() {
       <div className="min-h-screen bg-[#fafbf9] text-neutral-900 transition-colors duration-300">
         
         {/* Single-column responsive layout, centered, exactly matching the screenshot structure */}
-        <div className="max-w-xl mx-auto px-6 py-16 sm:py-28 space-y-16">
+        <main className="max-w-xl mx-auto px-6 py-16 sm:py-28 space-y-16">
           {/* Conversational landing bio with reach links */}
           <Header onOpenResume={() => setIsResumeOpen(true)} />
 
@@ -44,7 +44,7 @@ export default function App() {
 
           {/* Fine footer metadata */}
           <Footer />
-        </div>
+        </main>
 
         {/* Detailed interactive Resume sheet modal triggered via secondary link click */}
         <ResumeModal isOpen={isResumeOpen} onClose={() => setIsResumeOpen(false)} />

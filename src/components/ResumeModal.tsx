@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { X, Mail, Phone, Github, Linkedin, MapPin, Briefcase, GraduationCap, FileText, ChevronRight } from 'lucide-react';
 import { PERSONAL_INFO, EXPERIENCES, EDUCATION_HISTORY, PROJECTS, RESEARCH_PUBLICATIONS, SKILL_CATEGORIES } from '../data.ts';
 
@@ -13,18 +13,64 @@ interface ResumeModalProps {
 }
 
 export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => {
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    closeButtonRef.current?.focus();
+
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        onClose();
+      }
+    };
+
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [isOpen, onClose]);
+
+  const handleDialogKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (event.key !== 'Tab' || !dialogRef.current) return;
+
+    const focusableElements = dialogRef.current.querySelectorAll<HTMLElement>(
+      'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])'
+    );
+    const firstElement = focusableElements[0];
+    const lastElement = focusableElements[focusableElements.length - 1];
+
+    if (!firstElement || !lastElement) return;
+
+    if (event.shiftKey && document.activeElement === firstElement) {
+      event.preventDefault();
+      lastElement.focus();
+    } else if (!event.shiftKey && document.activeElement === lastElement) {
+      event.preventDefault();
+      firstElement.focus();
+    }
+  };
+
   if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-sm flex justify-center items-start p-4 sm:p-6 md:p-10 animate-fadeIn">
       {/* Absolute click-outside dismiss indicator */}
-      <div className="absolute inset-0 cursor-default" onClick={onClose}></div>
+      <div className="absolute inset-0 cursor-default" onClick={onClose} aria-hidden="true"></div>
 
       {/* Main Resume Sheet container */}
-      <div className="relative w-full max-w-4xl bg-white rounded-2xl border border-neutral-200 shadow-2xl p-6 sm:p-10 md:p-12 text-neutral-800 z-10 animate-scaleUp">
+      <div
+        ref={dialogRef}
+        className="relative w-full max-w-4xl bg-white rounded-2xl border border-neutral-200 shadow-2xl p-6 sm:p-10 md:p-12 text-neutral-800 z-10 animate-scaleUp"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="resume-modal-title"
+        onKeyDown={handleDialogKeyDown}
+      >
         
         {/* Top Dismiss Button */}
         <button 
+          ref={closeButtonRef}
           onClick={onClose}
           className="absolute top-4 sm:top-6 right-4 sm:right-6 p-2 rounded-full hover:bg-neutral-100 transition-colors"
           aria-label="Dismiss resume view"
@@ -35,7 +81,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
 
         {/* Resume Header */}
         <div className="border-b border-neutral-100 pb-8 mb-8">
-          <h1 className="font-medium text-3xl sm:text-4xl text-neutral-900 tracking-tight mb-3">
+          <h1 id="resume-modal-title" className="font-medium text-3xl sm:text-4xl text-neutral-900 tracking-tight mb-3">
             {PERSONAL_INFO.name}
           </h1>
           <p className="text-sm text-indigo-600 font-medium mb-4 tracking-wider uppercase">
@@ -219,6 +265,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
             <div className="pt-6 border-t border-neutral-100">
               <button 
                 onClick={onClose}
+                aria-label="Close resume view"
                 className="w-full text-center py-2.5 rounded-xl text-xs border border-indigo-600 bg-indigo-600 hover:bg-indigo-700 text-white transition-all pointer-events-auto"
               >
                 Close Resume View
