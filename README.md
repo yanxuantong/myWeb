@@ -1,20 +1,77 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# MyWeb
 
-# Run and deploy your AI Studio app
+This repository contains the source code for my personal website and interactive resume.
 
-This contains everything you need to run your app locally.
+The site is a lightweight portfolio for Shawn (Xuantong) Yan. It introduces my background as a backend and AI systems engineer, lists professional experience, links to selected projects, and includes an interactive resume modal with education, skills, research, and publication details.
 
-View your app in AI Studio: https://ai.studio/apps/06e570b0-9e76-4756-ae66-78d08590edff
+## What This Package Includes
 
-## Run Locally
+- A Vite + React single-page website
+- Tailwind CSS styling with a minimal personal-site layout
+- Resume and portfolio content stored as structured TypeScript data
+- Sections for profile summary, experience, projects, skills, education, and publications
+- An interactive resume modal built with React components and Lucide icons
 
-**Prerequisites:**  Node.js
+## Tech Stack
 
+- React 19
+- TypeScript
+- Vite
+- Tailwind CSS
+- Lucide React
+- Motion
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Project Structure
+
+```text
+src/
+  App.tsx                  # Main page layout
+  data.ts                  # Portfolio, resume, project, and writing content
+  index.css                # Tailwind and global font styling
+  main.tsx                 # React entry point
+  types.ts                 # Shared content types
+  components/
+    Header.tsx             # Intro, contact links, and resume trigger
+    ExperienceSec.tsx      # Experience summary section
+    ProjectsSec.tsx        # Project links section
+    ResumeModal.tsx        # Interactive resume view
+    ThemeContext.tsx       # Theme state wrapper
+```
+
+## Running Locally
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Run a TypeScript check:
+
+```bash
+npm run lint
+```
+
+Build for production:
+
+```bash
+npm run build
+```
+
+Preview the production build:
+
+```bash
+npm run preview
+```
+
+## Notes
+
+This is not a reusable library package. It is the application code for my personal website. Most site content is edited in `src/data.ts`, while layout and presentation are handled by the React components under `src/components/`.
+
+The repository still contains a few artifacts from the original AI Studio-generated scaffold, but the current website does not require a Gemini API key to render the portfolio UI.
