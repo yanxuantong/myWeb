@@ -2,7 +2,16 @@
 
 This repository contains the source code for my personal website and interactive resume.
 
-The site is a lightweight portfolio for Shawn (Xuantong) Yan. It introduces my background as a backend and AI systems engineer, lists professional experience, links to selected projects, and includes an interactive resume modal with education, skills, research, and publication details.
+The site is a lightweight portfolio for Shawn (Xuantong) Yan. It introduces my background as a backend infrastructure and AI engineer, lists professional experience, links to selected projects, and includes an interactive resume modal with education, skills, research, and publication details.
+
+## Website
+
+Production site:
+
+- https://xtyan.dev
+- https://www.xtyan.dev
+
+The site is deployed on Cloudflare Pages. The custom domain is managed through Cloudflare DNS, with Cloudflare proxying enabled for the apex and `www` hostnames.
 
 ## What This Package Includes
 
@@ -69,6 +78,24 @@ Preview the production build:
 ```bash
 npm run preview
 ```
+
+## Deployment
+
+Production builds are generated with Vite and published from the `dist/` directory:
+
+```bash
+npm run build
+```
+
+The deployed site uses Cloudflare Pages security headers from `public/_headers`, including:
+
+- `Content-Security-Policy`
+- `X-Frame-Options`
+- `X-Content-Type-Options`
+- `Referrer-Policy`
+- `Permissions-Policy`
+
+No API keys or private deployment credentials are required for the public portfolio UI.
 
 ## Notes
 
