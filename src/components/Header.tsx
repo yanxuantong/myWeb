@@ -22,11 +22,10 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
 
       <div className="space-y-5 text-neutral-600 leading-relaxed text-sm sm:text-base font-light">
         <p>
-          I'm a Backend Engineer with 3.5 years of experience building and operating high-performance systems.
-          I enjoy building thoughtfully crafted software. I've worked at{' '}
-          <span className="text-neutral-900 font-semibold">Amazon</span> (engineering cloud optimization engines at internal fleet scale and end-to-end RAG systems) and{' '}
-          <span className="text-neutral-900 font-semibold">Blinkfire</span> (developing AI-SaaS analytics metrics and PyTorch computer vision detection pipelines). 
-          I am a cat person.
+          I build backend infrastructure and AI systems, mostly the kind of software that sits behind the interface and quietly does the hard work. At{' '}
+          <span className="text-neutral-900 font-semibold">Amazon</span>, I work on internal-scale cloud optimization and retrieval systems; before that, at{' '}
+          <span className="text-neutral-900 font-semibold">Blinkfire</span>, I built analytics and computer vision pipelines for media intelligence. I like systems that are simple on the surface, reliable under load, and still pleasant to maintain. Outside of work, I spend a lot of time exploring local-first AI tools, agentic development workflows, and small software products.{' '}
+          <span className="font-cat text-[1.08em] italic text-neutral-800">I also happen to be a cat person.</span>
         </p>
 
         <p>
