@@ -7,7 +7,7 @@ import { Experience, Project, Education, ResearchPublication, SkillCategory, Blo
 
 export const PERSONAL_INFO = {
   name: "Shawn (Xuantong) Yan",
-  title: "Backend & AI Systems Engineer",
+  title: "Backend Infrastructure & AI Engineer",
   email: "xtyan@u.northwestern.edu",
   phone: "(773) 273-1585",
   location: "Sunnyvale, CA",

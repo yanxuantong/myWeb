@@ -17,7 +17,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenResume }) => {
     <header className="space-y-6">
       {/* Bio text block matching the exact phrasing & minimalist rhythm of the ericli.io screenshot */}
       <h1 className="text-xl sm:text-2xl font-normal text-neutral-900 tracking-tight leading-snug">
-        I'm Shawn (Xuantong) Yan, a backend & AI systems engineer based in Sunnyvale.
+        I'm Shawn (Xuantong) Yan, a backend infrastructure & AI engineer based in the Bay Area.
       </h1>
 
       <div className="space-y-5 text-neutral-600 leading-relaxed text-sm sm:text-base font-light">
