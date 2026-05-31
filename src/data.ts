@@ -6,8 +6,8 @@
 import { Experience, Project, Education, ResearchPublication, SkillCategory, BlogPost } from './types.ts';
 
 export const PERSONAL_INFO = {
-  name: "Shawn (Xuantong) Yan",
-  title: "Backend Infrastructure & AI Engineer",
+  name: "Shawn Yan (Xuantong Yan)",
+  title: "AI Infrastructure & Backend Engineer",
   email: "xtyan@u.northwestern.edu",
   phone: "(773) 273-1585",
   location: "Sunnyvale, CA",

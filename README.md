@@ -2,7 +2,7 @@
 
 This repository contains the source code for my personal website and interactive resume.
 
-The site is a lightweight portfolio for Shawn (Xuantong) Yan. It introduces my background as a backend infrastructure and AI engineer, lists professional experience, links to selected projects, and includes an interactive resume modal with education, skills, research, and publication details.
+The site is a lightweight portfolio for Shawn Yan, also known as Xuantong Yan. It introduces my background as an AI infrastructure and backend engineer, lists professional experience, links to selected projects, and includes an interactive resume modal with education, skills, research, and publication details.
 
 ## Website
 
