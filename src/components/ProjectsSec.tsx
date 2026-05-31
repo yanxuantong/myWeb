@@ -22,6 +22,12 @@ export const ProjectsSec: React.FC = () => {
       title: "CalPal",
       description: "An on-device, privacy-first AI calendar for iOS utilizing local foundation parsing logic without cloud network hops.",
       link: "https://github.com/yanxuantong/Calpal-App"
+    },
+    {
+      id: "multi-agent-job-search",
+      title: "Multi-Agent Job Search Platform",
+      description: "A reference AI agent platform for job-search workflows, demonstrating orchestration, HITL checkpoints, evals, tracing, and MCP-style tool boundaries.",
+      link: "https://github.com/yanxuantong/multi-agent-job-search-platform"
     }
   ];
 
